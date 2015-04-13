@@ -1,20 +1,22 @@
 DNS:
 	/etc/resolv.conf
 
-Ö÷ÒªÓÃÓÚDNS²éÑ¯£¬ÔÚ unix ºÍ linux ÏÂ£¬½¨Òé´ó¼ÒÊ¹ÓÃ dig ÃüÁîÀ´´úÌæ nslookup¡£dig ÃüÁîµÄ¹¦ÄÜ±È nslookup Ç¿´óºÜ¶à£¬²»Ïñ nslookup »¹µÃ set À´ set È¥µÄ£¬¹ÖÂé·³µÄ¡£ÏÂÃæÊÇ dig µÄÒ»Ğ©±È½Ï³£ÓÃµÄÃüÁî£º
-# dig ×î»ù±¾µÄÓÃ·¨
+       digä¸»è¦ç”¨äºDNSæŸ¥è¯¢ï¼Œåœ¨ unix å’Œ linux ä¸‹ï¼Œå»ºè®®å¤§å®¶ä½¿ç”¨ dig å‘½ä»¤æ¥ä»£æ›¿ nslookupã€‚
+       dig å‘½ä»¤çš„åŠŸèƒ½æ¯” nslookup å¼ºå¤§å¾ˆå¤šï¼Œä¸åƒ nslookup è¿˜å¾— set æ¥ set å»çš„ï¼Œæ€ªéº»çƒ¦çš„ã€‚
+       ä¸‹é¢æ˜¯ dig çš„ä¸€äº›æ¯”è¾ƒå¸¸ç”¨çš„å‘½ä»¤ï¼š
+# dig æœ€åŸºæœ¬çš„ç”¨æ³•
 dig @server sina.com.cn.
-# ÓÃ dig ²é¿´ zone Êı¾İ´«Êä
+# ç”¨ dig æŸ¥çœ‹ zone æ•°æ®ä¼ è¾“
 dig @server zx.xmgd.com. AXFR
-# ÓÃ dig ²é¿´ zone Êı¾İµÄÔöÁ¿´«Êä
-dig @server zx.xmgd.com. ¢ùFR=N
-# ÓÃ dig ²é¿´·´Ïò½âÎö
+# ç”¨ dig æŸ¥çœ‹ zone æ•°æ®çš„å¢é‡ä¼ è¾“
+dig @server zx.xmgd.com. â…¨FR=N
+# ç”¨ dig æŸ¥çœ‹åå‘è§£æ
 dig -x 210.52.83.228 @server
-# ²éÕÒÒ»¸öÓòµÄÊÚÈ¨ dns ·şÎñÆ÷
+# æŸ¥æ‰¾ä¸€ä¸ªåŸŸçš„æˆæƒ dns æœåŠ¡å™¨
 dig xmgd.com. +nssearch
-# ´Ó¸ù·şÎñÆ÷¿ªÊ¼×·×ÙÒ»¸öÓòÃûµÄ½âÎö¹ı³Ì
+# ä»æ ¹æœåŠ¡å™¨å¼€å§‹è¿½è¸ªä¸€ä¸ªåŸŸåçš„è§£æè¿‡ç¨‹
 dig xmgd.com +trace
-# ²é¿´ÄãÊ¹ÓÃµÄÊÇÄÄ¸ö F root dns server
+# æŸ¥çœ‹ä½ ä½¿ç”¨çš„æ˜¯å“ªä¸ª F root dns server
 dig +norec @F.ROOT-SERVERS.NET HOSTNAME.BIND CHAOS TXT
-# ²é¿´ bind µÄ°æ±¾ºÅ
+# æŸ¥çœ‹ bind çš„ç‰ˆæœ¬å·
 dig @bind_dns_server CHAOS TXT version.bind[1] 
