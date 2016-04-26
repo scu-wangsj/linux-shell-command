@@ -1,0 +1,14 @@
+ARP: 
+    tcpdump -i wlp7s0 -ent '(dst 172.16.3.1 and src 172.16.3.100) or (dst 172.16.3.100 and src 172.16.3.1)'
+
+DNS: 
+    tcpdump -i wlp7s0 -ntx -s 500 port domain   抓取wlp7s0无线网卡上的DNS服务端口数据包
+
+IP:
+    tcpdump -ntx -i lo  抓取本地回路上的数据包
+
+IP 127.0.0.1.55288 > 127.0.0.1.ssh: Flags [S], seq 2749100201, win 43690, options [mss 65495,sackOK,TS val 25648567 ecr 0,nop,wscale 7], length 0
+    0x0000:  4500 003c ad1e 4000 4006 8f9b 7f00 0001
+    0x0010:  7f00 0001 d7f8 0016 a3db f0a9 0000 0000
+    0x0020:  a002 aaaa fe30 0000 0204 ffd7 0402 080a
+    0x0030:  0187 5db7 0000 0000 0103 0307
